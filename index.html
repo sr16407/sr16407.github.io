@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth Scrolling Navigation</title>
+    <title>Webpage</title>
     <style>
+        header h1 {
+            font-style: italic;
+            color: blue;
+        }
+        title {
+            font-weight: bold;
+            color: purple;
+        }
+        main p {
+            line-height: 2; /* Double spaced */
+            font-size: 13px;
+        }
+        #logo {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 100px; /* Adjust the size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        /* Add any additional CSS styles as needed */
+
         /* Style for anchor links */
         a {
             text-decoration: none;
@@ -25,19 +46,44 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1 id="flashingTitle">CSCI 5436</h1>
+    </header>
     <nav>
+        <a href="https://georgiasouthern.desire2learn.com/d2l/le/calendar/763340/event/3566344/detailsview#3566344">
+            Go to Course Calendar
+        </a>
         <!-- Anchor links for smooth scrolling -->
         <a href="#section1">Section 1</a>
         <a href="#section2">Section 2</a>
         <a href="#section3">Section 3</a>
     </nav>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida auctor odio, eu volutpat est rhoncus
+            nec.
+            Proin eget congue ex. Vivamus feugiat, nisl vel efficitur tincidunt, justo purus scelerisque ex, et
+            bibendum odio turpis vel lacus.</p>
+        <!-- Add more content as needed -->
+    </main>
 
     <!-- Sections with IDs -->
     <section id="section1" style="background-color: lightblue;">Section 1</section>
     <section id="section2" style="background-color: lightgreen;">Section 2</section>
     <section id="section3" style="background-color: lightcoral;">Section 3</section>
 
+    <img id="logo" src="path/to/computer.jpeg" alt="Computer Logo">
+
+    <footer>
+        <p>&copy; 2024 Your Company | Contact: contact@yourcompany.com</p>
+    </footer>
+
     <script>
+        // JavaScript code to make the title flash every 3 seconds
+        setInterval(function () {
+            var title = document.getElementById("flashingTitle");
+            title.style.display = (title.style.display === 'none' || title.style.display === '') ? 'block' : 'none';
+        }, 3000);
+
         // Smooth scrolling function
         function smoothScroll(target, duration) {
             var targetElement = document.querySelector(target);
@@ -65,7 +111,7 @@
         }
 
         // Smooth scrolling for anchor links
-        document.querySelectorAll('a').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 var target = this.getAttribute('href');
