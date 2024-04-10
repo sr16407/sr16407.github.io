@@ -25,74 +25,7 @@
             height: auto; /* Maintain aspect ratio */
         }
         /* Add any additional CSS styles as needed */
-    </style>
-</head>
-<body>
-    <header>
-        <h1 id="flashingTitle">CSCI 5436</h1>
-    </header>
-    <nav>
-        <a href="https://georgiasouthern.desire2learn.com/d2l/le/calendar/763340/event/3566344/detailsview#3566344">
-            Go to Course Calendar
-        </a>
-    </nav>
-    <main>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida auctor odio, eu volutpat est rhoncus
-            nec.
-            Proin eget congue ex. Vivamus feugiat, nisl vel efficitur tincidunt, justo purus scelerisque ex, et
-            bibendum odio turpis vel lacus.</p>
-        <!-- Add more content as needed -->
-    </main>
-    <img id="logo" src="path/to/computer.jpeg" alt="Computer Logo">
-    <footer>
-        <p>&copy; 2024 Your Company | Contact: contact@yourcompany.com</p>
-    </footer>
-    <script>
-        // JavaScript code to make the title flash every 3 seconds
-        setInterval(function () {
-            var title = document.getElementById("flashingTitle");
-            title.style.display = (title.style.display === 'none' || title.style.display === '') ? 'block' : 'none';
-        }, 3000);
-        body {
-  font-family: Arial;
-}
 
-input[type=radio] + label {
-  cursor: pointer;
-  margin-right: 24px;
-  font-size: 14pt;
-}
-
-/* Additional styles for form elements */
-input[type=text] {
-   width: 310px;
-   padding: 15px;
-   margin-top: 4px;
-}
-
-input[type=submit] {
-   width: 200px;
-   padding: 15px;
-   margin-top: 10px;
-   border: none;
-}
-
-form {
-   font: 10pt Arial;
-   background-color: #eee;
-   padding: 10px;
-}
-
-label {
-   display: inline-block;
-   width: 45px;
-   text-align: left;
-   margin-right: 5px;
-}
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth Scrolling Navigation</title>
-    <style>
         /* Style for anchor links */
         a {
             text-decoration: none;
@@ -113,19 +46,44 @@ label {
     </style>
 </head>
 <body>
+    <header>
+        <h1 id="flashingTitle">CSCI 5436</h1>
+    </header>
     <nav>
+        <a href="https://georgiasouthern.desire2learn.com/d2l/le/calendar/763340/event/3566344/detailsview#3566344">
+            Go to Course Calendar
+        </a>
         <!-- Anchor links for smooth scrolling -->
         <a href="#section1">Section 1</a>
         <a href="#section2">Section 2</a>
         <a href="#section3">Section 3</a>
     </nav>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida auctor odio, eu volutpat est rhoncus
+            nec.
+            Proin eget congue ex. Vivamus feugiat, nisl vel efficitur tincidunt, justo purus scelerisque ex, et
+            bibendum odio turpis vel lacus.</p>
+        <!-- Add more content as needed -->
+    </main>
 
     <!-- Sections with IDs -->
     <section id="section1" style="background-color: lightblue;">Section 1</section>
     <section id="section2" style="background-color: lightgreen;">Section 2</section>
     <section id="section3" style="background-color: lightcoral;">Section 3</section>
 
+    <img id="logo" src="path/to/computer.jpeg" alt="Computer Logo">
+
+    <footer>
+        <p>&copy; 2024 Your Company | Contact: contact@yourcompany.com</p>
+    </footer>
+
     <script>
+        // JavaScript code to make the title flash every 3 seconds
+        setInterval(function () {
+            var title = document.getElementById("flashingTitle");
+            title.style.display = (title.style.display === 'none' || title.style.display === '') ? 'block' : 'none';
+        }, 3000);
+
         // Smooth scrolling function
         function smoothScroll(target, duration) {
             var targetElement = document.querySelector(target);
@@ -153,18 +111,19 @@ label {
         }
 
         // Smooth scrolling for anchor links
-        document.querySelectorAll('a').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 var target = this.getAttribute('href');
                 smoothScroll(target, 1000); // Adjust duration as needed
             });
         });
-
     </script>
 </body>
 </html>
-     
- 
+
+    
+   
 
   
+    
